@@ -32,7 +32,7 @@ fi
 for f in /docker-entrypoint-initdb.d/*; do
   case "$f" in
     *.sh)     echo "$0: running $f"; . "$f" ;;
-    *.sql)    echo "$0: running $f"; echo "exit" | /u01/app/oracle/product/11.2.0/xe/bin/sqlplus "SYS/oracle" AS SYSDBA @"$f"; echo ;;
+    *.sql)    cat $f | /u01/app/oracle/product/11.2.0/xe/bin/sqlplus -s SYSTEM/oracle;;
     *)        echo "$0: ignoring $f" ;;
   esac
   echo

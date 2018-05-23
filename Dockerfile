@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Wei-Ming Wu <wnameless@gmail.com>
+MAINTAINER Klaus Klein <klauswk1@gmail.com>
 
 ADD assets /assets
 RUN /assets/setup.sh
